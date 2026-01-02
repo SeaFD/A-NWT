@@ -1,0 +1,18 @@
+﻿#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+rm log.*
+
+restore0Dir
+
+runApplication setFields 
+
+runApplication decomposePar
+runParallel renumberMesh -overwrite
+
+runParallel interFoam
+
+# ----------------------------------------------------------------- end-of-file

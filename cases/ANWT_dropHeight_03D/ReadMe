@@ -1,0 +1,8 @@
+To run the case execute the ./Allrun script.
+
+An initialised copy of the polyMesh directoy sits in the TheMesh folder. 
+If you restart the case using ./Allclean, then the polyMesh directory from the TheMesh folder is copied back into the constant folder by the script.
+
+To postprocess the case you can use the python scripts: 
+	- "extractData.py" to get the heave displacement time series of the sphere, saved as .txt files in a created Results folder.
+	- "PP_waveProbes.py" to get the free surface elevation, measured at 0.6m, 1.2m and 1.8m from the sphere axis, and save as .txt files in the case folder.

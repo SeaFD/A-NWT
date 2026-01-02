@@ -1,0 +1,160 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                |
+| \\      /  F ield         | cfMesh: A library for mesh generation          |
+|  \\    /   O peration     |                                                |
+|   \\  /    A nd           | Author: Franjo Juretic                         |
+|    \\/     M anipulation  | E-mail: franjo.juretic@c-fields.com            |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version   2.0;
+    format    ascii;
+    class     dictionary;
+    location  "system";
+    object    meshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaceFile "constant/triSurface/domainWedge.stl";
+
+maxCellSize 0.075;
+
+
+
+
+
+objectRefinements
+{
+                        body3
+    {
+        type        box;
+        cellSize    0.00234375;
+        centre      (0 0 -0.075);
+        lengthX     0.6;
+        lengthY     0.009375;
+        lengthZ     0.45;
+    }
+    
+               body4
+    {
+        type        box;
+        cellSize    0.075;
+        centre      (0 0 -0.35);
+        lengthX     1.8;
+        lengthY     0.15;
+        lengthZ     1.1;
+    }
+    
+        body3
+    {
+        type        box;
+        cellSize    0.0375;
+        centre      (0 0 -0.275);
+        lengthX     1.5;
+        lengthY     0.075;
+        lengthZ     0.95;
+    }
+    
+    
+    body2
+    {
+        type        box;
+        cellSize    0.009375;
+        centre      (0 0 -0.2);
+        lengthX     1.2;
+        lengthY     0.01875;
+        lengthZ     0.8;
+    }
+    
+    
+                   body1
+    {
+        type        box;
+        cellSize    0.0046875;
+        centre      (0 0 -0.125);
+        lengthX     0.9;
+        lengthY     0.009375;
+        lengthZ     0.65;
+    }
+    
+
+ freeSurface
+    {
+        type        box;
+        cellSize     0.0046875;
+        centre      (0 0 -0.09);
+        lengthX     2;
+        lengthY     0.009375;
+        lengthZ     0.65;
+    }
+    
+     freeSurface1
+    {
+        type        box;
+        cellSize     0.0046875;
+        centre      (0 0 -0.20625);
+        lengthX     4;
+        lengthY     0.009375;
+        lengthZ     0.4875;
+    }
+
+
+ freeSurface2
+    {
+        type        box;
+        cellSize     0.0046875;
+        centre      (0 0 -0.09);
+        lengthX     100;
+        lengthY     0.009375;
+        lengthZ     0.01875;
+    }
+    
+
+
+
+
+}
+
+/*
+ 
+boundaryLayers
+{
+
+    patchBoundaryLayers
+    {
+     floatingBody
+        {
+            nLayers           3;
+            thicknessRatio    1.2;
+            maxFirstLayerThickness 0.01;
+            allowDiscontinuity 1;
+        }
+
+        
+
+    }
+
+    optimiseLayer 1;
+    optimisationParameters
+    {
+        nSmoothNormals 			30;		// (optional) number of iterations in the procedure for reducing normal variation
+        relThicknessTol 		0.2; 		// (optional) maximum allowed thickness variation of thickness between two neigbouring points, divided by the distance between the points
+        featureSizeFactor 		0.5;		// (optional) ratio between the maximum layer thickness and the estimated feature size
+        reCalculateNormals 		1; 		// (optional) activate 1 or deactivate 0 calculation of normal
+        maxNumIterations 		100;		// (optional) maximum number of iterations of the whole procedure
+    }
+}
+*/
+
+meshQualitySettings
+{
+    maxNonOrthogonality 70;
+    nSmoothScale        5;
+    errorReduction      0.8;
+    minVol             1;
+ // minTetQuality      0.2;
+    minTwist            0.2;
+  }
+
+// ************************************************************************* //

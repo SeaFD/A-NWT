@@ -1,0 +1,103 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.4                                   |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "";
+    case            "";
+    instance        "";
+    local           "";
+
+    class           dictionary;
+    object          blockMeshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+                       convertToMeters 1;
+
+vertices        
+(
+	(0 0 -2)
+	(5 0.087262 -2) 
+	(5 0.087262 -0.3) 
+
+	(0 0 -0.3)
+	(5 -0.087262 -3) 
+	(5 -0.087262 -0.3)
+
+	(5 0.087262 0.3) 
+	(0 0 0.3)
+	(5 -0.087262 0.3) 
+
+
+	(5 0.087262 2) 
+	(0 0 2)
+	(5 -0.087262 2)
+
+);
+
+blocks          
+(
+    hex (0 4 1 0 3 5 2 3) (100 1 10) simpleGrading (1 1 0.2)
+    hex (3 5 2 3 7 8 6 7) (100 1 12) simpleGrading (1 1 1)
+    hex (7 8 6 7 10 11 9 10) (100 1 10) simpleGrading (1 1 5)
+
+);
+
+edges           
+(
+);
+
+patches         
+(
+     wedge front
+     (
+        (0 1 2 3)
+	(3 2 6 7)
+	(7 6 9 10)
+     )
+     wedge back
+     (
+        (0 3 5 4)
+	(3 7 8 5)
+	(7 10 11 8)
+     )
+     wall wall
+     (
+        (1 4 5 2)
+	(2 5 8 6)
+	(6 8 11 9)
+     )
+     wall bottom
+     (
+	(0 4 1 0)
+     )
+     patch atmosphere
+     (
+        (10 9 11 10)
+     )
+     empty axis
+     (
+        (0 3 3 0)
+	(3 7 7 3)
+	(7 10 10 7)
+     )
+     wall floatingObject
+     ( 
+     )
+);
+
+mergePatchPairs
+(
+
+);
+
+// ************************************************************************* //
