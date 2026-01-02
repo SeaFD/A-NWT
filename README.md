@@ -71,6 +71,7 @@ If you use this code, please cite:
   publisher={MDPI},
   doi={10.3390/sym16091252}
 }
+```
 
 ## Related
 
