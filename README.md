@@ -7,10 +7,18 @@
 
 Axisymmetric numerical wave tank implemented in OpenFOAM for efficient simulation of heaving sphere dynamics. Achieves 50-100x computational speedup compared to full 3D simulations while maintaining high accuracy for axisymmetric geometries.
 
+## Associated Publication
+
+This case setup is described in detail in the following publication:
+
+**Davidson, J., Nava, V., Andersen, J., & Kramer, M. B.** (2024). Exploiting Axisymmetry to Optimize CFD Simulations—Heave Motion and Wave Radiation of a Spherical Buoy. *Symmetry*, 16(9), 1252. [https://doi.org/10.3390/sym16091252](https://doi.org/10.3390/sym16091252)
+
+**If you use this numerical wave tank in your research, please cite the above publication.**
+
 ## Features
 
 - **Computational Efficiency**: 50-100x faster than 3D equivalents
-- **High Accuracy**: Validated against analytical solutions
+- **High Accuracy**: Validated against physical wave tank experiments
 - **Custom Mesh Generator**: Automated axisymmetric mesh tool
 - **Complete Test Case**: Heaving sphere drop test included
 
@@ -37,21 +45,7 @@ interFoam
 
 - **Geometry**: Heaving sphere (D = 0.3 m)
 - **Initial Drop Height**: 0.3D (0.09 m)
-- **Validated**: Added mass, natural period, damping
-
-## Requirements
-
-- OpenFOAM v8 or later
-- C++ compiler for polyMeshMaker
-- ParaView for visualization
-
-## Performance
-
-| Configuration | Cells | Wall Time | Speedup vs 3D |
-|---------------|-------|-----------|---------------|
-| Coarse | 5k | ~5 min | ~100x |
-| Medium | 20k | ~20 min | ~75x |
-| Fine | 80k | ~80 min | ~50x |
+- **Validated**: Heave motion and wave radiation
 
 ## License
 
@@ -61,6 +55,22 @@ GNU GPL v3.0 - see [LICENSE](LICENSE)
 
 **Josh Davidson**  
 ORCID: [0000-0001-5966-4272](https://orcid.org/0000-0001-5966-4272)
+
+## Citation
+
+If you use this code, please cite:
+```bibtex
+@article{davidson2024exploiting,
+  title={Exploiting Axisymmetry to Optimize CFD Simulations—Heave Motion and Wave Radiation of a Spherical Buoy},
+  author={Davidson, Joshua and Nava, Vicente and Andersen, Jonas and Kramer, Morten Bech},
+  journal={Symmetry},
+  volume={16},
+  number={9},
+  pages={1252},
+  year={2024},
+  publisher={MDPI},
+  doi={10.3390/sym16091252}
+}
 
 ## Related
 
