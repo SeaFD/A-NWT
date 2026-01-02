@@ -59,7 +59,7 @@ GNU GPL v3.0 - see [LICENSE](LICENSE)
 
 ## Author
 
-**Joshua Davidson**  
+**Josh Davidson**  
 ORCID: [0000-0001-5966-4272](https://orcid.org/0000-0001-5966-4272)
 
 ## Related
